@@ -2,12 +2,13 @@
   "name": "notes",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin":{
-	"note":"./index.js"	
-},
+  "bin": {
+    "note": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pi55man/notesjs.git"
@@ -18,5 +19,8 @@
     "url": "https://github.com/pi55man/notesjs/issues"
   },
   "homepage": "https://github.com/pi55man/notesjs#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
 }
