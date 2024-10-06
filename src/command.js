@@ -42,7 +42,7 @@ yargs(hideBin(process.argv))
 		return yargs.positional("port", {
 			type: 'number',
 			default: 5000,
-			description: 'port to bind on'
+			description: 'port to bind on',
 		})
 	}, async (argv) => {
 		//TODO 
@@ -62,5 +62,3 @@ yargs(hideBin(process.argv))
 	})
 	.demandCommand(1)
 	.parse();
-
-
