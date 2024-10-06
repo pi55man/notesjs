@@ -1,7 +1,7 @@
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import {newNote, getAllNotes, removeNotes, removeAllNotes, findNotes} from './notes.js'
-
+import { newNote, getAllNotes, removeNotes, removeAllNotes, findNotes } from './notes.js'
+import { start } from "./server.js"
 //hidebin hides first two automatic arguments from process.argv
 yargs(hideBin(process.argv))
 	.command("new <note>", "create new note with content <note>", yargs => {
@@ -45,7 +45,8 @@ yargs(hideBin(process.argv))
 			description: 'port to bind on',
 		})
 	}, async (argv) => {
-		//TODO 
+		const notes = await getAllNotes();
+		start(notes,argv.port);
 	})
     .command("remove <id>","delete note having id",(yargs)=>{
 		return yargs.positional("id",{
